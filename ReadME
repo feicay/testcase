@@ -1,0 +1,10 @@
+运行步骤：
+1、make prepare
+2、make
+3、打开两个终端，一个运行server，一个运行client
+
+
+说明：
+1、请阅读参考makefile，make prepare的目的是通过protoc --cpp_out=./ Test.proto指令将通过proto文件生成对应的cc和h文件，包含类的声明、实现
+2、源码中SerializeToArray函数是将结构体数据数据序列化存储到内存中，注意，这个函数是个异步函数！！，后面需要加一定延时时间，写入的数据越多，需要延时时间越长，否则接收方会收到很多0数据
+3、若传输的数据中有数组，在proto文件中用repeated字段表示，optional表示可选字段，required表示肯定会出现在结构中的字段

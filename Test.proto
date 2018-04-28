@@ -1,0 +1,8 @@
+package Test.protobuf ;//包名:在生成对应的C++文件时，将被替换为名称空间，在代码中会有体现
+option optimize_for = SPEED ;//文件级别的选项,Protobuf优化级别
+//心跳信息数据结构
+message HeartInfo
+{
+    required int32 curtime = 1;
+    required string hostip = 2 ; 
+};

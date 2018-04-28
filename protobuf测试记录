@@ -1,0 +1,12 @@
+测试条件：
+	TCP/IP模式，使用protobuf序列化数据
+一、本地回环模式
+	1、小数据包模式，数据包模式如下
+		message HeartInfo
+		{
+			required int32 curtime = 1;
+			required string hostip = 2 ; 
+		};
+		100000次通信需要8～9秒时间，平均80～90微秒完成一次发送接收
+	2、大数据包模式
+		
